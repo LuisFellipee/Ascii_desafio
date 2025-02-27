@@ -1,0 +1,1010 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    border: none;
+    outline: none;
+    scroll-behavior: smooth;
+    font-family: "Poppins", sans-serif;
+}
+:root{
+    --bg-color: #151522;
+    --second-bg-color: #1c1c36;
+    --text-color: #ffffff;
+    --main-color: #4525d1;
+    --four-color: #341cab;
+    --big-font: 2.5rem;
+}
+.lightmode{
+    --bg-color: #f0f0f0;
+    --second-bg-color: #e8e9ed;
+    --text-color: #111528;
+    --main-color: #4525d1;
+    --four-color: #341cab;
+}
+.theme-switch{
+    height: 50px;
+    width: 50px;
+    padding: 0;
+    border-radius: 50%;
+    background-color: var(--second-bg-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    border: none; 
+    margin-left: 20px;
+   
+}
+.theme-switch:hover{
+    transform: scale(1)translateY(-3px);
+    box-shadow: 0 0 10px var(--main-color);
+}
+#theme-switch svg{
+    fill: var(--main-color);
+}
+#theme-switch svg:last-child {
+    display: none; 
+}
+
+.lightmode #theme-switch svg:first-child {
+    display: none; 
+}
+
+.lightmode #theme-switch svg:last-child {
+    display: block; 
+}
+
+html{ 
+    font-size: 60%;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+}
+
+
+/*Inicio do Programa  ----------------------------------------------*/
+body{
+    background: var(--bg-color);
+    color: var(--text-color);
+}
+
+
+/* ESTILO Cabeçalho ----------------------------------------------*/
+
+
+.cabecalho{
+    position: fixed;
+    top:0;
+    left: 0;
+    width: 100%;
+    padding: 4rem 12% 4rem;
+    border-bottom: 1px solid transparent;
+     background: rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(10px);  
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 5;
+    margin: 0 auto; 
+}
+.logo{
+    font-size: 3rem;
+    color: var(--text-color);
+    font-weight: 800;
+    cursor: pointer;
+    transition: 0.3s ease;
+    text-shadow: 0 0 25px var(--main-color);
+}
+.logo:hover{
+    transform: scale(1.1);
+}
+.taskbar {
+    display: flex;
+    align-items: center; 
+    gap: 20px; 
+    margin-left: auto;
+} 
+.taskbar a{
+    font-size: 1.8rem;
+    color: var(--text-color);
+    margin-left: 1rem;
+    font-weight: 500;
+    transition: 0.3s ease;
+    border-bottom: 3px solid transparent;
+}
+.taskbar a:hover, 
+.taskbar a.active{
+    color: var(--main-color);
+    border-bottom: 3px solid var(--main-color);
+}
+#menu-icon{
+    font-size: 3.5rem ;
+    color: var(--main-color);
+    display: none;
+}
+
+
+
+/* ESTILO Inicio ----------------------------------------------*/
+
+
+.inicio{
+    min-height: 85vh; 
+    display: flex;
+    flex-direction: column; 
+    justify-content: center; 
+    align-items: center; 
+    text-align: center; 
+}
+.inicio span{
+    color: var(--main-color);
+}
+.texto-perfil{
+    width: 300px;
+    height: 300px;
+    box-shadow: 0 0 20px var(--main-color);
+    border-radius: 50%;
+    border: 4px solid var(--main-color); 
+    animation: flutuar 5s ease-in-out infinite;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    text-align: center;
+    font-size: 50px;
+}
+.inicio h2{
+    font-size: 5.5rem;
+    color: var(--main-color);
+    font-weight: bold;
+    margin: 20px;
+    text-align: center;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+.inicio p{
+    font-size: 2.5rem;
+    color: var(--text-color);
+    text-align: center;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+
+/*ESTILO SOBRE ----------------------------------------------*/
+
+
+section{
+    min-height: 80vh;
+    padding: 10rem 12% 10rem;
+}
+.sobre{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 15rem;
+}
+
+.sobre-content {
+    display: flex;
+    flex: 2;
+    flex-direction: column;
+    align-items: flex-start;
+    text-align: left; 
+    justify-content: center;
+    margin-top: 3rem;
+    animation: appear linear both;
+    animation-timeline: view();
+    animation-range: cover 0% cover 35%;
+}
+.sobre-content span{
+    color: var(--main-color);
+}
+.interface-sobre{
+    max-width: 1280px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between; 
+    align-items: center;
+    gap: 10rem; 
+}
+
+.logo span{
+    color: var(--main-color);
+}
+.sobre-content h3{
+    margin-bottom: 2rem;
+    margin-top: 1rem;
+    font-size: 3.5rem;
+}
+.sobre-content h1{
+    font-size: 7rem;
+    font-weight: 700;
+    margin-top: 1.5rem;
+    line-height: 1.3;
+    white-space: nowrap; 
+    margin-bottom: 2rem;
+}
+
+.sobre-content .apresentacao-1::after{
+    content: '|';
+    margin-left: 10px;
+    opacity: 1;
+    animation: piscar .7s infinite;
+}
+.sobre-img{
+    flex: 1; 
+    display: flex;
+    justify-content: flex-end; 
+}
+.sobre-img img{
+    width: 20vw;
+    border-radius: 50%;
+    box-shadow: 0 0 25px var(--main-color);
+    cursor: pointer;
+    transition: 0.4 ease-in-out;
+}
+.sobre-img img:hover{
+    box-shadow: 0 0 25px var(--main-color),
+                0 0 50px  var(--main-color),
+                0 0 100px var(--main-color);
+}
+.sobre-content p{
+    font-size: 2rem;
+    font-weight: 500;
+    line-height: 1.8;
+    max-width: 1000px;
+}
+.social-icons a{
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 4.5rem;
+    height: 4.5rem;
+    background: transparent;
+    border: 2px solid var(--main-color);
+    font-size: 3.5rem;
+    border-radius: 50%;
+    color: var(--main-color);
+    margin: 3rem 1.5rem 3rem 0;
+    transition: 0.3s ease-in-out;
+}
+.social-icons a:hover{
+    color: var(--text-color);
+    transform: scale(1.3)translateY(-5px);
+    box-shadow: 0 0 25px var(--main-color);
+    background-color: var(--main-color);
+}
+.btn{
+    display: inline-block;
+    padding: 1rem 2.8rem;
+    background: var(--main-color);
+    box-shadow: 0 0 25px var(--main-color);
+    border-radius: 4rem;
+    font-size: 1.6rem;
+    color: #f0f0f0;
+    border: 2px solid transparent;
+    letter-spacing: 0.1rem;
+    font-weight: 600;
+    transition: 0.3s ease-in-out;
+    cursor: pointer;
+}
+.btn:hover{
+    transform: scale(1.05);
+    box-shadow: 0 0 50px var(--main-color);
+}
+
+
+
+/*ESTILO CURIOSIDADE --------------------------------------------------*/
+
+
+.curiosidade{
+    padding: 8rem 4rem;
+}
+.curiosidade-titulo{
+    font-size: 5rem;
+    color: var(--text-color);
+    text-align: center;
+    margin-bottom: 20px;
+}
+.curiosidade-caixa{
+    padding: 3rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    border-radius: 17px;
+    border: 1px solid var(--main-color);
+    backdrop-filter: blur(10px);
+    background: var(--second-bg-color);
+}
+.curiosidade p{
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 3rem; 
+}
+
+
+
+/* ESTILO Habilidades Profisionais---------------------------*/
+
+
+.skills{
+    min-height: 80vh;
+    background: var(--second-bg-color);
+}
+.skill-main{
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-row-gap: 30px;
+    grid-column-gap: 60px;
+    animation:  appear 1ms ease-in-out;
+    animation-timeline: view();
+    animation-range: cover 0% cover 40%;
+}
+.skill-main span{
+    color: var(--main-color);
+}
+ .main-text {
+    color: var(--main-color);
+    font-size: 2rem;
+    text-align: center;
+} 
+.skills h2{
+    font-size: 5rem;
+    color: var(--text-color);
+    text-align: center;
+    margin-bottom: 15px;
+}
+.skill-bar{
+    margin-bottom: 2.5rem;
+     font-size: 2.5rem; 
+     width: 100%;
+}
+.skill-main h3{
+    margin-bottom: 2rem;
+    font-size: 2.5rem;
+    text-align: center;
+}
+.skill-left span{
+    text-shadow: 0 0 25px var(--main-color);
+}
+.skill-left .skill-bar .info{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 10px;
+    font-size: 1.8rem; 
+}
+.skill-left .skill-bar .bar{
+    width: 100%;
+    height: 10px;
+    background-color: var(--bg-color);
+    border-radius: 25px;
+    margin-top: 8px;
+    position: relative; 
+    padding: 5px; 
+    box-sizing: border-box;  
+}
+.skill-bar .bar span{
+    width: 100%;
+    height: 100%;
+    min-height: 8px; 
+    position: absolute;
+    top: 0; 
+    left: 0;
+    background: var(--four-color);
+    border-radius: 25px;
+    box-shadow: 0 0 1.5rem var(--main-color);
+}
+.skill-bar .bar .html{
+    width: 65%;
+    animation: html 2s;
+} 
+.skill-bar .bar .css{
+    width: 70%;
+    animation: css 3s;
+}
+.skill-bar .bar .javascript{
+    width: 55%;
+    animation: javascript 4s;
+}
+.skill-bar .bar .photoshop{
+    width: 90%;
+    animation: photoshop 5s;
+}
+.skill-bar .bar .premierepro{
+    width: 85%;
+    animation: premierepro 5s;
+}
+
+
+
+/* ESTILO Habilidades Tecnicas-----------------------------*/
+
+
+.profissional{
+    margin-bottom: 2.5rem;
+    font-size: 2rem;
+    width: 100%;
+}
+.skill-right span{
+    text-shadow: 0 0 25px var(--main-color);
+}
+.skill-right .profissional .info{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 10px;
+    font-size: 1.8rem;
+    margin-top: 5.9rem;
+}
+.skill-right .profissional .bar{
+    width: 100%;
+    height: 10px;
+    background-color: var(--bg-color);
+    border-radius: 25px;
+    margin-top: 8px;
+    position: relative; 
+    padding: 5px; 
+    box-sizing: border-box; 
+    margin-bottom: 3rem; 
+}
+.profissional .bar span{
+    width: 100%;
+    height: 100%;
+    min-height: 8px; 
+    position: absolute;
+    top: 0; 
+    left: 0;
+    background: var(--four-color);
+    border-radius: 25px;
+    box-shadow: 0 0 1.5rem var(--main-color);
+}
+.profissional .bar .team-work{
+    width: 80%;
+    animation: team-work 2s;
+}
+.profissional .bar .criatividade{
+    width: 90%;
+    animation: criatividade 3s;
+}
+.profissional .bar .comunicacao{
+    width: 85%;
+    animation: comunicacao 4s;
+}
+.profissional .bar .autodidata{
+    width: 77%;
+    animation: autodidata 5s;
+}
+
+
+
+/*ESTILO PROJETOS------------------------------------------------- */
+
+
+section.projetos{
+    min-height: 100vh;
+    gap: 25rem;
+    padding: 80px 4%;
+}
+section.projetos .flex{
+    display: flex;
+    justify-content: space-around;
+    margin-top: 60px;
+}
+.titulo-projetos{
+    font-size: 4rem;
+    color: var(--text-color);
+    text-align: center;
+    margin-bottom: 20px;
+}
+.titulo-projetos span{
+    color: var(--four-color);
+    text-shadow: 0 0 25px var(--main-color);
+}
+.img-projetos{
+    width: 360px;
+    height: 460px;
+    background: var(--second-bg-color);
+    background-size: cover;
+    background-position: 100% 0%;
+    transition: 7s;
+    border-radius: 40px;
+    cursor: pointer;
+    position: relative;
+    animation:  appear2 1ms ease-in-out;
+    animation-timeline: view();
+    animation-range: cover 0% cover 50%;
+}
+.img-projetos:hover{
+    background-position: 100% 100%;
+}
+.overlay{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #593ed179;
+    border-radius: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 22px;
+    text-align: center;
+    color: var(--text-color);
+    opacity: 0;
+    transition: 0.5s;
+}
+.overlay:hover{
+    opacity: 1;
+}
+.saiba-mais {
+    display: flex;
+    flex-direction: column; 
+    align-items: center; 
+    margin-top: 20px; 
+}
+.saiba-mais-caixa{
+    padding: 0 2rem;
+    margin-top: 1.3rem;
+    border-radius: 10px;
+    backdrop-filter: blur(10px);
+    background: var(--main-color);
+    opacity: 0; 
+    max-height: 0; 
+    overflow: hidden;
+    transition: opacity 0.5s ease, max-height 0.5s ease, padding 0.5s ease; 
+}
+.saiba-mais .moreText {
+    text-align: left;
+    font-size: 2rem;
+    margin-bottom: 2.5rem; 
+    margin-top: 1rem;
+}
+.moreText{
+    color: #f0f0f0;
+}
+.btn-saiba-mais{
+    display: inline-flex; 
+    align-items: center; 
+    gap: 10px; 
+    padding: 1rem 1.7rem;
+    background: var(--main-color);
+    box-shadow: 0 0 25px var(--main-color);
+    border-radius: 6rem;
+    font-size: 2rem;
+    color: #f0f0f0;
+    border: 2px solid transparent;
+    font-weight: 600;
+    transition: 0.3s ease-in-out;
+    outline: none;
+    cursor: pointer;
+    margin-top: 20px; 
+}
+.btn-saiba-mais:hover{
+    transform: scale(1.05);
+    box-shadow: 0 0 50px var(--main-color);
+}
+.saiba-mais-caixa.show-more{
+    padding: 2rem;
+    opacity: 1;
+    max-height: 500px;
+}
+.bx {
+    transition: transform 0.3s ease;
+}
+.show-more .bx-down-arrow-alt {
+    transform: rotate(180deg); 
+}
+
+
+
+/*ESTILO CONTATO ---------------------------------------------*/
+
+ .contato{
+    padding: 7rem, 2rem;
+} 
+.contato h2{
+    text-align: center;
+    font-size: 4rem;
+    margin-bottom: 50px;
+}
+.formulario-contato{
+    max-width: 600px;
+    margin: 0 auto;
+    background: var(--second-bg-color);
+    backdrop-filter: blur(5px);
+    padding: 2rem;
+    border: 1px solid var(--main-color);
+    border-radius: 15px;
+}
+.grupo-form{
+    margin-bottom: 1.5rem;
+}
+.campo-form{
+    width: 100%;
+    padding: 1rem;
+    background: var(--second-bg-color);
+    border-radius: 8px;
+    color: var(--text-color);
+    border: 1px solid var(--four-color);
+    outline: none;
+}
+.campo-form:focus{
+    border-color: var(--main-color);
+    box-shadow: 0 0 10px var(--main-color);
+}
+.botao-form{
+    color: var(--text-color);
+    background: linear-gradient(90deg, var(--main-color), var(--four-color));
+    padding: 1rem 2rem;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+    width: 100%;
+    transition: all 0.5 ease;
+}
+.botao-form:hover{
+    transform: translateY(-4px);
+    box-shadow: 0 0 10px var(--main-color);
+}
+.particulas{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    opacity: 0.5;
+    background: 
+    radial-gradient(circle at 10% 20%, var(--main-color) 0%, transparent 20%),
+    radial-gradient(circle at 90% 80%, var(--four-color) 0%, transparent 20%),
+    var(--bg-color);
+}
+footer{
+    padding: 30px 4%;
+    background: var(--second-bg-color);
+}
+.interface-footer{
+    max-width: 1280px; 
+    margin: 0 auto;
+} 
+
+.logo-footer{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+footer .line-footer{
+    padding: 20px 0;
+    border-top: 2px solid var(--main-color);
+    display: flex; 
+    justify-content: space-between; 
+    align-items: center; 
+}
+.direitos-reservados p {
+    margin: 0; 
+    font-size: 1rem; 
+    color: #cccccca6; 
+}
+
+footer .line-footer p i{
+    color: var(--main-color);
+    font-size: 2.3rem;
+}
+footer .line-footer p a{
+    color: var(--text-color);
+    font-size: 1.8rem;
+}
+
+
+
+
+/*keyframes ---------------------------------------------*/
+
+
+/*keyframes DE HABILIDADES ---------------------------------------------*/
+@keyframes html{
+    0%{
+        width: 0%;
+    }
+    100%{
+        width: 65%;
+     }
+}
+@keyframes css{
+    0%{
+        width: 0%;
+    }
+    100%{
+        width: 70%;
+    }
+}
+@keyframes javascript{
+    0%{
+        width: 0%;
+    }
+    100%{
+        width: 55%;
+    }
+}
+@keyframes photoshop{
+    0%{
+        width: 0%;
+    }
+    100%{
+        width: 90%;
+    }
+}
+@keyframes premierepro{
+    0%{
+        width: 0%;
+    }
+    100%{
+        width: 85%;
+    }
+}
+
+@keyframes team-work{
+    0%{
+        width: 0%;
+    }
+    100%{
+        width: 80%;
+    }
+}
+@keyframes criatividade{
+    0%{
+        width: 0%;
+    }
+    100%{
+        width: 90%;
+    }
+}
+@keyframes comunicacao{
+    0%{
+        width: 0%;
+    }
+    100%{
+        width: 85%;
+    }
+}
+@keyframes autodidata{
+    0%{
+        width: 0%;
+    }
+    100%{
+        width: 77%;
+    }
+
+}
+
+
+/*keyframes DE animação ---------------------------------------------*/
+
+
+@keyframes appear{
+    from{
+        opacity: 0;
+        translate: -25vh 0;
+    }
+
+    to{
+        opacity: 1;
+        translate: 0 0;
+    }
+}
+@keyframes appear2{
+    from{
+        opacity: 0;
+        translate: 25vh 0;
+    }
+
+    to{
+        opacity: 1;
+        translate: 0 0;
+    }
+}
+
+
+@keyframes piscar{
+    0%,100%{
+        opacity: 1;
+    }
+    50%{
+        opacity: 0;
+    }
+}
+
+
+@keyframes flutuar{
+    0%, 100%{
+        transform: translateY(0);
+    }
+
+    50%{
+        transform: translateY(-20px);
+    }
+}
+
+
+
+/*media responsividade ---------------------------------------------*/
+
+/* Responsividade para telas abaixo de 1285px */
+@media screen and (max-width: 1285px) {
+
+    /* Responsividade Geral */
+    html {
+        font-size: 55%; 
+    }
+
+    /* Responsividade de cabeçalho */
+    .cabecalho {
+        padding: 2rem 5%; 
+    }
+
+    .taskbar a {
+        font-size: 1.6rem; 
+        margin-left: 0.5rem; 
+    }
+
+     /* Responsividade da seção sobre */
+    .sobre {
+        flex-direction: column; 
+        gap: 5rem; 
+    }
+    .interface-sobre {
+        flex-direction: column; 
+        gap: 5rem; 
+    }
+    .sobre-content {
+        text-align: center; 
+        align-items: center; 
+    }
+
+    .sobre-img {
+        order: -1; 
+        margin-bottom: 3rem; 
+        justify-content: center;
+    }
+
+    .sobre-img img {
+        width: 40vw;
+    }
+
+    
+    /* Responsividade da seção Projetos */
+    section.projetos .flex {
+        flex-direction: column; 
+        align-items: center; 
+        gap: 3rem; 
+    }
+
+    .img-projetos {
+        width: 80%; 
+        height: 300px; 
+        max-width: 360px;
+        margin: 0 auto;
+    }
+
+    /* Responsividade da seção "Skills" */
+    .skill-main {
+        grid-template-columns: 1fr; 
+        gap: 3rem; 
+    }
+
+
+    /* Responsividade da seção Entre em contato */
+    .formulario-contato {
+        padding: 1.5rem; 
+    }
+
+    .campo-form {
+        font-size: 1.6rem; 
+    }
+
+   /* Responsividade de footer */
+    footer .line-footer {
+        flex-direction: column; 
+        text-align: center; 
+    }
+
+    .logo-footer {
+        flex-direction: column;
+        gap: 1rem; 
+    }
+
+    .direitos-reservados p {
+        margin-top: 1rem; 
+    }
+}
+
+/* Responsividade para telas abaixo de 768px */
+
+@media screen and (max-width: 768px) {
+
+    /* Responsividade Geral */
+    html {
+        font-size: 50%; 
+    }
+
+   /* Responsividade de cabeçalho */
+    #menu-icon {
+        display: block; 
+    }
+
+    .taskbar {
+        display: none;
+        flex-direction: column; 
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background: var(--second-bg-color);
+        padding: 1rem;
+    }
+
+    .taskbar.active {
+        display: flex; 
+    }
+
+    .taskbar a {
+        margin: 1rem 0; 
+    }
+
+   /* Responsividade da seção Inicio */
+    .texto-perfil {
+        width: 200px; 
+        height: 200px; 
+        font-size: 3rem; 
+    }
+
+    .inicio h2 {
+        font-size: 4rem; 
+    }
+
+    .inicio p {
+        font-size: 2rem; 
+    }
+
+    /* Responsividade da seção Sobre */
+    
+    .sobre-content h1 {
+        font-size: 5rem; 
+    }
+
+    .sobre-content h3 {
+        font-size: 2.5rem; 
+    }
+
+    .sobre-content p {
+        font-size: 1.8rem; 
+    }
+
+    .sobre-img img {
+        width: 60vw; 
+    }
+
+    /* Responsividade da seção Projetos */
+    .img-projetos {
+        width: 90%; 
+        height: 250px; 
+    }
+
+    /* Responsividade da seção "Skills" */
+    .skill-bar .info {
+        font-size: 1.6rem; 
+    }
+    
+    /* Ajustes na seção "contato" */
+    .contato h2 {
+        font-size: 3rem; 
+    }
+    .campo-form {
+        font-size: 1.4rem; 
+    }
+}
